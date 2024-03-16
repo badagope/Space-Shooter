@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public int points;
 
-    public Projectile projectilePrefab;
+    public GameObject prefab;
 
     public float shootInterval;
     public float shootTimer;
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     {
         if (shootTimer <= 0)
         {
-            Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
+            Instantiate(prefab, shootPoint.position, Quaternion.identity);
             shootTimer = shootInterval;
         }
     }
